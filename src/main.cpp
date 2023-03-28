@@ -635,6 +635,23 @@ int loop (LoopType type, PaletteEffect* paletteEffects, bool effectsStopped) {
 
 		}
 #endif
+		if ((event.type == SDL_JOYBUTTONDOWN) ||
+			(event.type == SDL_JOYBUTTONUP)) {
+
+				if (event.jbutton.button ==  10 ) {
+					if( event.type == SDL_JOYBUTTONDOWN ){
+						setMusicVolume(getMusicVolume() + 4);
+						setSoundVolume(getSoundVolume() + 4);
+					}
+				}
+				if (event.jbutton.button ==  11 ) {
+					if( event.type == SDL_JOYBUTTONDOWN ){
+						setMusicVolume(getMusicVolume() - 4);
+						setSoundVolume(getSoundVolume() - 4);
+					}
+				}
+
+		}
 
 	}
 
@@ -691,7 +708,7 @@ int main(int argc, char *argv[]) {
 		return -1;
 
 	}
-
+	SDL_ShowCursor(false);
 
 	// Load configuration and establish a window
 

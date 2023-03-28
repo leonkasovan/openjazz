@@ -31,7 +31,7 @@
 
 // Constants
 
-#define ESCAPE_STRING "(esc) quits"
+#define ESCAPE_STRING "(R1) quits"
 
 // Demo timeout
 #define T_DEMO 20000

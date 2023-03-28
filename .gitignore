@@ -53,3 +53,4 @@ OpenJazz-*.zip
 # generated documentation
 /doc/html
 /builds/unix/OpenJazz.6
+build-rg35xx-garlic/*
