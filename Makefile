@@ -3,7 +3,7 @@ include openjazz.mk
 
 # Sane defaults
 CXX ?= g++
-CXXFLAGS ?= -g -Wall -O2
+CXXFLAGS ?= -g -Wall -O2 -marm -march=armv7-a -mtune=cortex-a9 -mfpu=neon-fp16 -mfloat-abi=softfp
 CPPFLAGS = -Isrc -DSCALE -Iext/scale2x -Iext/psmplug -Iext/miniz -Iext/argparse
 
 # Network support

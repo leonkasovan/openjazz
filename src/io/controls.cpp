@@ -203,7 +203,7 @@
     #define DEFAULT_BUTTON_NO           (-1)
 #endif
 
-
+extern char my_msg[1024];
 /**
  * Set up the default controls.
  */
@@ -531,7 +531,7 @@ int Controls::update (SDL_Event *event, LoopType type) {
 			break;
 
 		case SDL_JOYBUTTONDOWN:
-
+			sprint(my_msg, "Event SDL_JOYBUTTONDOWN: event->jbutton.button=%d return=%d", event->jbutton.button, JOYSTICKB | event->jbutton.button);
 			if (type == SET_JOYSTICK_LOOP) return JOYSTICKB | event->jbutton.button;
 
 			for (count = 0; count < CONTROLS; count++)
@@ -549,7 +549,7 @@ int Controls::update (SDL_Event *event, LoopType type) {
 			break;
 
 		case SDL_JOYAXISMOTION:
-
+			sprint(my_msg, "Event SDL_JOYAXISMOTION: event->jaxis.value=%d return=%d", event->jaxis.value, JOYSTICKANEG | event->jaxis.axis);
 			if (type == SET_JOYSTICK_LOOP) {
 
 				if (event->jaxis.value < -16384)
@@ -574,7 +574,7 @@ int Controls::update (SDL_Event *event, LoopType type) {
 			break;
 
 		case SDL_JOYHATMOTION:
-
+			sprint(my_msg, "Event SDL_JOYHATMOTION: event->jhat.hat=%d return=", event->jhat.hat);
 			if (type == SET_JOYSTICK_LOOP) {
 
 				switch(event->jhat.value) {

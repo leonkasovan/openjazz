@@ -35,6 +35,7 @@
 #include "setup.h"
 #include "util.h"
 
+char my_msg[1024];
 
 /**
  * Run the keyboard setup menu.
@@ -308,6 +309,7 @@ int SetupMenu::setupJoystick () {
 			}
 
 		}
+		fontmn2->showString(my_msg, 0, 0);
 
 		showEscString();
 
